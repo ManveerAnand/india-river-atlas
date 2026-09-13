@@ -1,0 +1,1 @@
+{"bounds": [64, 4, 99, 38], "nx": 451, "ny": 451, "indiaReaches": 255319, "regionalReaches": 414584, "routeCount": 19, "source": "HydroRIVERS v1 Asia", "threshold": "catchment \u226510 km\u00b2 or average flow \u22650.1 m\u00b3/s", "simplificationDegrees": 0.007, "elevationExaggeration": 44.4}

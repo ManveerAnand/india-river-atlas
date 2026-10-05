@@ -3,6 +3,7 @@ work/
 node_modules/
 
 # Local configuration and generated downloads
+.openai/
 .env
 .env.*
 !.env.example

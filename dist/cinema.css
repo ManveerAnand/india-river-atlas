@@ -54,3 +54,14 @@
 @media(min-width:701px){#story-card.has-guide{left:auto;right:35px;top:215px;bottom:180px;width:300px;overflow:auto;padding:18px;background:#102b36ed;border:1px solid #63868366;border-radius:13px;scrollbar-width:thin}}
 @media(max-width:700px){.playback{flex-wrap:wrap}.timeline{flex-basis:100%}#journey-guide{margin-bottom:20px}#guide-title{font-size:27px}#guide-text,#story-card #guide-text{font-size:16px;min-height:0}.guide-buttons button{min-height:44px}#local-locator{top:395px}#local-locator #speed-control{font-size:11px}#local-locator #journey-speed{min-height:32px;padding:5px 6px}#story-card.has-guide{position:relative;inset:auto;order:2;width:auto}#speed-slot{margin-left:auto}}
 @media(max-width:700px){.local-scene.guided-notes #scene{height:clamp(280px,44svh,430px)}.local-scene.guided-notes #local-city{font-size:36px}.local-scene.guided-notes #local-locator{top:calc(80px + clamp(280px,44svh,430px) - 160px)}.local-scene.guided-notes #route-locator{height:40px}.local-scene.guided-notes .guide-top{margin-bottom:12px}}
+/* Project credits stay usable in both the atlas and miniature scenes. */
+footer{align-items:center}
+footer .project-links{display:flex;align-items:center;gap:18px;pointer-events:auto;flex-wrap:wrap;justify-content:center}
+.project-links a{display:inline-flex;align-items:center;gap:5px;min-height:28px;color:#c8dedf;text-decoration:none;white-space:nowrap;border-bottom:1px solid transparent}
+.project-links a:hover{color:#ffe0ad;border-bottom-color:#ffe0ad88}
+.project-links a span{color:#79c9cf}
+.about-project{margin:24px 0 0;padding:18px 0 0;border-top:1px solid #63868366}
+.about-project h3{margin:0 0 8px}
+.about-project .project-links{display:flex;gap:18px;flex-wrap:wrap}
+@media(min-width:701px) and (max-width:1000px){footer .map-hint{display:none}footer .project-links{gap:12px}}
+@media(max-width:700px){footer{align-items:flex-start;gap:7px}footer .project-links{justify-content:flex-start;gap:16px;order:-1}footer .project-links a{min-height:44px}.about-project .project-links a{min-height:44px}}

@@ -1,34 +1,122 @@
-# India River Atlas
+<div align="center">
 
-An interactive 3D atlas of India's river network, with 19 featured river journeys and a detailed Ganga tour built from cinematic miniature scenes.
+# 🌊 India River Atlas
 
-The Ganga journey visits Gaumukh, Devprayag, Haridwar, Prayagraj, Varanasi, Malviya Bridge, Farakka and the lower estuary. It includes animated people, boats and traffic, optional camera detours, five playback speeds, and 46 guide notes for destinations and travel between them.
+### Many sources. Connected journeys. A river you can follow.
+
+Explore India's rivers in 3D, then descend into a living Ganga journey—
+from glacier valleys to ghats, bridges and the lower estuary.
+
+**19 river journeys · 8 Ganga miniatures · 46 guide notes**
+
+[Explore the experience](#explore-the-experience) · [Run locally](#run-locally) · [Road to ready](#road-to-ready) · [Development guide](#development-guide)
+
+**Status: actively in development** · Browser first · Blender later
+
+</div>
+
+![The Varanasi miniature: layered ghats, waterfront architecture, people at the water's edge and an illustrated river guide.](docs/images/varanasi-journey.jpg)
+
+<p align="center"><em>Varanasi, up close. An actual browser capture of the current experience.</em></p>
+
+## Explore the experience
+
+Start with the terrain and river network. Choose a river to follow its downstream route. Along the Ganga, the atlas gives way to miniature places where you can watch life beside the water or stop for a closer look.
+
+| 🗺️ See the landscape | 🎬 Follow the river | 📖 Stay curious |
+| --- | --- | --- |
+| A 3D national atlas with mountains, drainage destinations and smaller tributaries. | Guided camera sequences, eight Ganga stops, boats, bathing figures and bridge traffic. | Short destination and travel notes, source links, and a reading mode that holds your place. |
+
+![National river atlas with 3D terrain, named rivers and controls for choosing drainage destinations and river journeys.](docs/images/india-river-atlas.jpg)
+
+<p align="center"><em>255,319 mapped river sections provide the geographic context for 19 featured journeys.</em></p>
+
+### Watch, read or take a detour
+
+1. Choose **Ganga** and press **Play journey** to watch the complete tour.
+2. Set the pace: **0.5× · 1× · 1.5× · 2× · 3×**.
+3. Use **Read at my pace** to hold the journey while local activity continues; browse the guide notes with the arrows.
+4. Select a landmark or exploration button, or drag the view, to explore. **Continue journey** returns you to the guided camera.
+5. Jump between chapters or seek along the timeline. In a local detour, **Pause activity** freezes the people, boats and water too.
+
+Other rivers retain their atlas journeys. Detailed local miniatures currently belong to the Ganga tour.
+
+## Eight stops along the Ganga
+
+**Bhagirathi headwaters → Ganga at Devprayag → plains and confluences → Padma connection → lower estuary**
+
+| Stop | The scene | A closer look |
+| --- | --- | --- |
+| **01 · Gaumukh** | Glacier opening, rocky valley and gathering meltwater. | Follow the water into the headstream. |
+| **02 · Devprayag** | Two Himalayan channels meeting beside a hillside settlement. | Inspect the Bhagirathi and Alaknanda approaches. |
+| **03 · Haridwar** | Har Ki Pauri-inspired steps, terraces and bathing activity. | Move between the terrace and water's edge. |
+| **04 · Prayagraj** | Broad confluence, sandbanks, boats and a shore landing. | Take a boat viewpoint at the Sangam. |
+| **05 · Varanasi** | Dashashwamedh-inspired ghats, pavilions, lanes and boats. | Explore the ghat, follow a boat or look from above. |
+| **06 · Malviya Bridge** | Steel trusses, masonry piers, road traffic and a separate railway deck. | Follow a crossing or look beneath the bridge. |
+| **07 · Farakka** | Barrage gates and schematic onward water connections. | Compare routes or reveal the structure beneath the deck. |
+| **08 · Lower estuary** | Broad water, low banks, islands and boats. | Return to the atlas and trace the completed journey. |
+
+![Malviya Bridge miniature with steel trusses, masonry piers, road and rail decks and the Ganga beneath.](docs/images/malviya-bridge.jpg)
+
+<p align="center"><em>Malviya Bridge: the river journey meets a road-and-rail crossing.</em></p>
+
+## Road to ready
+
+**We are building this iteratively until the experience is ready.** All eight Ganga miniatures are implemented; visual polish, usability and measured performance remain part of the work. The screenshots show the current build, not a finished release.
+
+### Working today
+
+- National terrain, 19 selectable river journeys and connected downstream routes.
+- Eight Ganga miniatures with automatic camera sequences and optional exploration.
+- Animated people, rowing and passenger boats, water movement, cars, a bus and a train.
+- City and destination labels, a route locator, chapter jumps and timeline seeking.
+- Five playback speeds and 46 guide notes covering stops and travel between them.
+- Responsive controls and automated route, scene, placement and guide checks.
+
+### Before we call it ready
+
+- [ ] Review every arrival, reveal, observation and departure for framing, pacing and clear downstream orientation.
+- [ ] Inspect people, stairs, shorelines, boats and vehicles through complete animation cycles; refine any clipping or awkward movement.
+- [ ] Refine city names, landmark labels and explanatory notes for readability without covering important activity.
+- [ ] Verify play, pause, seek, replay, chapter jumps, exploration and return in every scene, including repeated revisits and river switches.
+- [ ] Review narrow screens, keyboard navigation and reduced-motion presentation across the full journey.
+- [ ] Measure frame rate and resource use in the target browsers; tune toward the initial **30 fps** target.
+- [ ] Complete a continuous start-to-finish visual review, then refresh screenshots, documentation and the downloadable browser package.
+
+Sound, seasonal water controls, additional detailed river journeys and Blender production are later phases. Publication is outside the current local release plan.
 
 ## Run locally
 
-The browser app is in `dist/`. It uses bundled Three.js and geographic data, so there is no dependency installation or build step.
+**No dependency installation or build step is needed.** The static browser app lives in `dist/`, with Three.js and geographic assets included.
 
-From the repository root, with Python 3 installed:
+From the repository root, with **Python 3** installed:
 
 ```sh
 python -m http.server 8765 --bind 127.0.0.1 --directory dist
 ```
 
-On Windows, `py -3` can be used in place of `python`. Open <http://127.0.0.1:8765/> in a browser with WebGL support. Select Ganga and press **Play journey**. Use **Read at my pace** to hold your place while local activity continues.
+On Windows, use `py -3` in place of `python` if needed.
 
-## Check a change
+Open **[http://127.0.0.1:8765/](http://127.0.0.1:8765/)** in a browser with WebGL support. Choose **Ganga → Play journey** for the miniature tour.
 
-With Node.js 20 or later, run:
+## Development guide
+
+Each iteration follows a simple loop:
+
+**Focus on one improvement → run checks → inspect it in the browser → commit the reviewed result.**
+
+With **Node.js 20 or later**:
 
 ```sh
 node scripts/check.mjs
 ```
 
-The checks cover module syntax and imports, downstream route continuity and endpoints, all eight miniatures at two detail levels, deterministic animation seeking, stair and bridge placement, resource disposal, and guide-note coverage.
+Checks cover module syntax and imports, downstream route continuity and endpoints, all eight miniatures at two detail levels, deterministic animation seeking, stair and bridge placement, resource disposal, and guide-note coverage.
 
-For visual changes, also inspect the affected scene in the browser. Check play/pause, chapter selection, timeline seeking, exploration and return, and a narrow viewport. Automated geometry checks do not replace visual review.
+Visual changes also need browser review: inspect the affected scene, its controls and a narrow viewport. Automated geometry checks do not replace watching the experience.
 
-## Where to make changes
+<details>
+<summary><strong>Where to make changes</strong></summary>
 
 | File | Purpose |
 | --- | --- |
@@ -42,19 +130,29 @@ For visual changes, also inspect the affected scene in the browser. Check play/p
 | `dist/guide-data.mjs` | Destination and travel notes with factual references |
 | `dist/journey-guide.mjs` | Guide controls and reading mode |
 | `dist/cinema.css` and `dist/index.html` | Presentation and responsive controls |
+| `docs/images/` | Real browser screenshots used in this README |
 
-For each iteration, make a focused change, run the checks, inspect the affected flow, and commit the result. If a browser retains an older module or stylesheet, update the corresponding version query in its imports or in `dist/index.html`.
+If a browser retains an older module or stylesheet after a change, update the corresponding version query in its imports or in `dist/index.html`.
 
-## Project notes
+</details>
 
-- [Journey guide and references](outputs/ganga-living-journey-guide.md)
-- [Simulation plan and later Blender work](outputs/river-simulation-plan.md)
+### Plans and references
 
-Miniatures and activity are stylized educational illustrations. Geographic chapters are approximate at national-map scale; the main Ganga route follows the Padma connection. Local feeder-channel and estuary scenes are schematic. Playback speed measures presentation time, not water speed or real travel time.
+- [Ganga journey guide, scene details and references](outputs/ganga-living-journey-guide.md)
+- [River simulation plan and later Blender work](outputs/river-simulation-plan.md)
 
-## Data and third-party attribution
+## Geographic treatment
 
-The app includes HydroRIVERS v1 Asia river sections, Natural Earth geographic context, and sampled Mapzen / Tilezen terrain. The mapped India view contains 255,319 river sections. This is a count of sections, not separately named rivers. Data credits and limitations also appear in **About this map**.
+India's rivers have **many separate source regions**. Tributaries generally join downstream; they do not all branch from one common origin.
+
+This Ganga journey starts with the Bhagirathi headwaters and follows the existing mapped route through the Padma connection. The Farakka feeder-channel and lower-estuary miniatures are schematic; they do not add a complete Hooghly branch or new distributaries to the geographic dataset. The mapped endpoint lies upstream of the open sea.
+
+Local scenes are stylized educational illustrations, with approximate chapter anchors rather than surveyed reconstructions. Water movement, people and traffic are illustrative animations. Playback speed controls presentation time, not water speed or real travel time.
+
+<details>
+<summary><strong>Data credits and third-party terms</strong></summary>
+
+The app includes HydroRIVERS v1 Asia river sections, Natural Earth geographic context, and sampled Mapzen / Tilezen terrain. The India view contains **255,319 river sections**, not 255,319 separately named rivers. Data credits and limitations also appear in **About this map**.
 
 - [HydroRIVERS](https://www.hydrosheds.org/products/hydrorivers) — [included terms](dist/data/hydro-license.pdf) and [technical documentation](dist/data/HydroRIVERS_TechDoc_v10.pdf)
 - [Natural Earth](https://www.naturalearthdata.com/)
@@ -62,3 +160,9 @@ The app includes HydroRIVERS v1 Asia river sections, Natural Earth geographic co
 - [Three.js MIT license](dist/vendor/LICENSE-three.txt)
 
 The original project code has no added redistribution license. Third-party components and datasets retain their own terms.
+
+</details>
+
+---
+
+<p align="center"><strong>Start with the landscape. Stay for the river's story.</strong></p>

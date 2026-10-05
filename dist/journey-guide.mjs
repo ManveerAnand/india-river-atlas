@@ -1,4 +1,4 @@
-import {notesFor,noteIndex} from './guide-data.mjs?v=3.7';
+import {notesFor,noteIndex} from './guide-data.mjs?v=4.0';
 const $=id=>document.getElementById(id);
 export class JourneyGuide{
  constructor(state,play){this.state=state;this.play=play;this.key=null;this.override=null;this.index=0;this.notes=[];this.paintKey=null;
@@ -9,7 +9,7 @@ export class JourneyGuide{
  hold(){this.override=this.index;this.state.reading=true;this.state.playing=false;this.state.activityPaused=false;}
  browse(direction){if(!this.notes.length)return;this.hold();this.override=Math.max(0,Math.min(this.notes.length-1,this.index+direction));}
  sync(sample,river,isLocal,free){
-  const notes=notesFor(sample,river),key=notes.length?`${sample.chapter.scene}-${sample.travelling}`:null;
+  const notes=notesFor(sample,river,isLocal),key=notes.length?`${sample.chapter.scene}-${sample.travelling}`:null;
   if(key!==this.key){this.key=key;this.override=null;this.state.reading=false;this.paintKey=null;}
   this.notes=notes;const visible=notes.length>0&&!free;
   const parent=isLocal?$('local-panel'):$('story-card'),guide=$('journey-guide');

@@ -4,12 +4,12 @@
 
 ### Many sources. Connected journeys. A river you can follow.
 
-Explore India's rivers in 3D, then descend into a living Ganga journey—
-from glacier valleys to ghats, bridges and the lower estuary.
+Follow India's connected rivers on a 3D map—from Himalayan headwaters
+to the lower estuary—with optional visits to ghats, glaciers and bridges.
 
 **[Launch River Atlas ↗](https://india-river-atlas.tecknight.workers.dev/)**
 
-**19 river journeys · 8 Ganga miniatures · 46 guide notes**
+**19 river journeys · 8 optional Ganga miniatures · 30 map & travel notes**
 
 [Explore the experience](#explore-the-experience) · [Run locally](#run-locally) · [Road to ready](#road-to-ready) · [Development guide](#development-guide)
 
@@ -17,17 +17,17 @@ from glacier valleys to ghats, bridges and the lower estuary.
 
 </div>
 
-![The Varanasi miniature: layered ghats, waterfront architecture, people at the water's edge and an illustrated river guide.](docs/images/varanasi-journey.jpg)
+![The Ganga map journey at Prayagraj: the gold followed route, blue onward channel and mint Yamuna tributary.](docs/images/ganga-map-journey.jpg)
 
-<p align="center"><em>Varanasi, up close. An actual browser capture of the current experience.</em></p>
+<p align="center"><em>The river stays in view. Gold traces progress; blue shows the onward route; mint identifies a joining tributary.</em></p>
 
 ## Explore the experience
 
-Start with the terrain and river network. Choose a river to follow its downstream route. Along the Ganga, the atlas gives way to miniature places where you can watch life beside the water or stop for a closer look.
+Start with the terrain and river network. Choose a river to follow its downstream route. The Ganga tour keeps the geographic map central. Choose a 3D visit at any of its eight stops to watch life beside the water, then return to your saved place.
 
 | 🗺️ See the landscape | 🎬 Follow the river | 📖 Stay curious |
 | --- | --- | --- |
-| A 3D national atlas with mountains, drainage destinations and smaller tributaries. | Guided camera sequences, eight Ganga stops, boats, bathing figures and bridge traffic. | Short destination and travel notes, source links, and a reading mode that holds your place. |
+| A 3D national atlas with mountains, drainage destinations and smaller tributaries. | A complete highlighted route, a growing downstream trace and eight optional Ganga visits. | Short destination and travel notes, source links, and a reading mode that holds your place. |
 
 ![National river atlas with 3D terrain, named rivers and controls for choosing drainage destinations and river journeys.](docs/images/india-river-atlas.jpg)
 
@@ -35,10 +35,10 @@ Start with the terrain and river network. Choose a river to follow its downstrea
 
 ### Watch, read or take a detour
 
-1. Choose **Ganga** and press **Play journey** to watch the complete tour.
+1. Choose **Ganga** and press **Play journey**. The map tour takes about **1 minute 52 seconds at 1×**, excluding optional visits.
 2. Set the pace: **0.5× · 1× · 1.5× · 2× · 3×**.
-3. Use **Read at my pace** to hold the journey while local activity continues; browse the guide notes with the arrows.
-4. Select a landmark or exploration button, or drag the view, to explore. **Continue journey** returns you to the guided camera.
+3. Use **Read at my pace** to hold your place and browse the guide notes. **See the whole river** pauses for a wider route view.
+4. At a stop, choose **Visit this place in 3D**, then select a landmark or viewpoint. **Continue journey** or **Return to map** resumes from the saved map position.
 5. Jump between chapters or seek along the timeline. In a local detour, **Pause activity** freezes the people, boats and water too.
 
 Other rivers retain their atlas journeys. Detailed local miniatures currently belong to the Ganga tour.
@@ -58,6 +58,10 @@ Other rivers retain their atlas journeys. Detailed local miniatures currently be
 | **07 · Farakka** | Barrage gates and schematic onward water connections. | Compare routes or reveal the structure beneath the deck. |
 | **08 · Lower estuary** | Broad water, low banks, islands and boats. | Return to the atlas and trace the completed journey. |
 
+![The optional Varanasi visit, with layered ghats, people and boats.](docs/images/varanasi-journey.jpg)
+
+<p align="center"><em>Take a closer look when you want one: the miniature is an optional detour.</em></p>
+
 ![Malviya Bridge miniature with steel trusses, masonry piers, road and rail decks and the Ganga beneath.](docs/images/malviya-bridge.jpg)
 
 <p align="center"><em>Malviya Bridge: the river journey meets a road-and-rail crossing.</em></p>
@@ -69,10 +73,10 @@ Other rivers retain their atlas journeys. Detailed local miniatures currently be
 ### Working today
 
 - National terrain, 19 selectable river journeys and connected downstream routes.
-- Eight Ganga miniatures with automatic camera sequences and optional exploration.
+- A map-first Ganga tour with eight optional miniatures and selectable viewpoints.
 - Animated people, rowing and passenger boats, water movement, cars, a bus and a train.
 - City and destination labels, a route locator, chapter jumps and timeline seeking.
-- Five playback speeds and 46 guide notes covering stops and travel between them.
+- Five playback speeds and 30 map and travel guide notes; destination descriptions accompany 3D visits.
 - Responsive controls and automated route, scene, placement and guide checks.
 
 ### Before we call it ready
@@ -99,7 +103,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 
 On Windows, use `py -3` in place of `python` if needed.
 
-Open **[http://127.0.0.1:8765/](http://127.0.0.1:8765/)** in a browser with WebGL support. Choose **Ganga → Play journey** for the miniature tour.
+Open **[http://127.0.0.1:8765/](http://127.0.0.1:8765/)** in a browser with WebGL support. Choose **Ganga → Play journey** for the map tour and optional miniature visits.
 
 ## Development guide
 
@@ -113,7 +117,7 @@ With **Node.js 20 or later**:
 node scripts/check.mjs
 ```
 
-Checks cover module syntax and imports, downstream route continuity and endpoints, all eight miniatures at two detail levels, deterministic animation seeking, stair and bridge placement, resource disposal, and guide-note coverage.
+Checks cover module syntax and imports, downstream route continuity and endpoints, all eight miniatures at two detail levels, route stroke visibility and backward seeking, deterministic animation seeking, stair and bridge placement, resource disposal, and guide-note coverage.
 
 Visual changes also need browser review: inspect the affected scene, its controls and a narrow viewport. Automated geometry checks do not replace watching the experience.
 
@@ -124,6 +128,7 @@ Visual changes also need browser review: inspect the affected scene, its control
 | --- | --- |
 | `dist/atlas.mjs` | Playback, river selection and journey state |
 | `dist/terrain-view.mjs` | National terrain and river map |
+| `dist/river-rendering.mjs` | Constant-width route highlights and directional flow cues |
 | `dist/story-data.mjs` | River chapters and geographic stops |
 | `dist/story-engine.mjs` | Route sampling and journey timeline |
 | `dist/scene-data.mjs` | Miniature definitions, camera shots and points of interest |
@@ -149,7 +154,7 @@ India's rivers have **many separate source regions**. Tributaries generally join
 
 This Ganga journey starts with the Bhagirathi headwaters and follows the existing mapped route through the Padma connection. The Farakka feeder-channel and lower-estuary miniatures are schematic; they do not add a complete Hooghly branch or new distributaries to the geographic dataset. The mapped endpoint lies upstream of the open sea.
 
-Local scenes are stylized educational illustrations, with approximate chapter anchors rather than surveyed reconstructions. Water movement, people and traffic are illustrative animations. Playback speed controls presentation time, not water speed or real travel time.
+Local scenes are stylized educational illustrations, with approximate chapter anchors rather than surveyed reconstructions. Water movement, people and traffic are illustrative animations. Playback speed changes the pace of the illustrative presentation and flow cues; it does not represent physical water speed or real travel time.
 
 <details>
 <summary><strong>Data credits and third-party terms</strong></summary>

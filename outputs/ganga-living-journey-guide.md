@@ -1,14 +1,16 @@
 # Ganga: a living river journey
 
-The browser atlas now includes eight local 3D miniatures along the Ganga journey. The original national terrain and nineteen selectable river routes remain available.
+The browser atlas now includes eight optional local 3D miniatures along the Ganga journey. The original national terrain and nineteen selectable river routes remain available.
 
 ## Watch or explore
 
-Choose **Ganga**, then press **Play journey**. The camera travels along the mapped river between destinations and enters a local miniature at each stop.
+Choose **Ganga**, then press **Play journey**. The camera follows the highlighted river on the geographic map. At 1×, the map tour takes about 1 minute 52 seconds; time spent reading or visiting miniatures is additional.
 
-Select a chapter to visit it directly. Select a labeled place or an exploration button to pause the guided timeline and take a detour. Drag to look around. **Continue journey** restores the guided camera and resumes the presentation from the saved point.
+Select a chapter to go to its map position. At a stop, choose **Visit this place in 3D** to enter the optional miniature without advancing the timeline. Select a labeled place or an exploration button for a closer viewpoint. Drag to look around. **Continue journey** restores the guided camera and resumes the presentation from the saved point.
 
-During exploration, water, people and boats continue moving. **Pause activity** freezes that motion. **Play activity** starts it again without advancing the guided timeline. **Return to map** shows the geographic context; **Resume guided camera** returns to the tour.
+During exploration, water, people and boats continue moving. **Pause activity** freezes that motion. **Play activity** starts it again without advancing the guided timeline. **Return to map** restores the guided map and resumes from the saved position. On the map, **See the whole river** holds the timeline and frames the complete route; **Resume guided camera** continues the tour.
+
+Gold marks the route followed; blue keeps the onward route visible from the beginning. Mint shows the Alaknanda or Yamuna approach at its confluence. Directional highlights continue during playback; explicit pause freezes them.
 
 The small route locator shows where the active destination belongs along the Ganga. On narrow screens, scene explanations and controls sit below the 3D view.
 
@@ -42,7 +44,7 @@ Presentation time is not water travel time. Surface water motion, wakes, vehicle
 - Rowboats and covered passenger boats, with oars, rocking and wakes.
 - Cars, a bus and a simplified train on their separate decks.
 - Directional water patterns and selectable tributary or diversion highlights.
-- Chapter-specific camera sequences, overhead views, guided detours and an explicit return action.
+- Chapter-specific camera presets, overhead views, optional detours and an explicit return action.
 - Only the active and next local scenes are retained; repeated shapes share geometry and materials. Smaller screens receive fewer figures or boats in the busiest scenes.
 
 ## Sources and reuse
@@ -68,9 +70,9 @@ Audio, seasonal water-level exploration, detailed scenes for additional rivers, 
 
 Use **Speed** to choose 0.5×, 1×, 1.5×, 2× or 3×. It appears beside the route locator in local scenes and beside playback controls on the atlas. Speed changes take effect without restarting the journey and also apply to the other river tours. Presentation time remains the same on the timeline; it is not real river travel time.
 
-The Ganga guide includes **32 destination notes and 14 travel notes**, appearing in sequence. Each stop introduces the place, adds cultural or geographic context, invites you to notice details, and sets up the next part of the journey. Factual notes link to their references; observation prompts describe the illustrative miniature.
+The map tour includes **16 map notes and 14 travel notes**, appearing in sequence. They explain the channel, terrain and joining rivers while those features remain visible. Optional miniatures show destination and point-of-interest descriptions; the editorial library also retains 32 destination notes for future scene storytelling. Factual notes link to their references; observation prompts describe the illustrative miniature.
 
-Choose **Read at my pace** or the note arrows to hold the guided camera and timeline. Local activity continues gently at normal speed while you read. **Pause activity** freezes it. **Continue journey** resumes the guided sequence at the selected speed. At faster speeds, use the note arrows to revisit anything you missed. Chapter jumps and seeking restore the corresponding guide note.
+Choose **Read at my pace** or the note arrows to hold the guided camera and timeline. Directional map highlights continue while you read. **Pause** freezes the motion too. In optional visits, **Pause activity** freezes water, people and boats. **Continue journey** resumes the guided sequence at the selected speed. At faster speeds, use the note arrows to revisit anything you missed. Chapter jumps and seeking restore the corresponding guide note.
 
 Additional references used for guide notes:
 

@@ -73,4 +73,4 @@ export const overviewStops = [
 
 // The bridge sits downstream of the Varanasi waterfront, before Farakka.
 riverStops.ganga.splice(5,0,{at:[83.039,25.323],short:'Malviya Bridge',title:'Two banks, connected',kind:'RIVER CROSSING',text:sceneDefinitions.malviya.text,distance:2.6,bearing:1.7});
-riverStops.ganga.forEach((stop,i)=>{const id=sceneOrder[i],def=sceneDefinitions[id];stop.scene=id;stop.hold=def.hold;stop.title=def.caption;stop.text=def.text;});
+riverStops.ganga.forEach((stop,i)=>{const id=sceneOrder[i],def=sceneDefinitions[id];stop.scene=id;stop.hold=def.hold;stop.mapTitle=stop.title;stop.mapText=stop.text;stop.title=def.caption;stop.text=def.text;});

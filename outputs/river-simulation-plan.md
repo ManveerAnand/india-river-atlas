@@ -31,13 +31,13 @@ The Luni and other seasonal channels are not presented as flowing continuously. 
 
 ## Living Ganga release
 
-The complete Ganga tour now includes eight local 3D miniatures, separate from the atlas terrain. Each has its own camera sequence and selectable detours. Varanasi and Haridwar include waterfront architecture, figures, bathing and boats. Malviya Bridge includes road traffic and a railway deck with a passing train. Source, confluence, barrage and estuary scenes complete the journey.
+The complete Ganga tour now includes eight local 3D miniatures, separate from the atlas terrain. They are optional visits from the map journey, each with camera presets and selectable detours. Varanasi and Haridwar include waterfront architecture, figures, bathing and boats. Malviya Bridge includes road traffic and a railway deck with a passing train. Source, confluence, barrage and estuary scenes complete the journey.
 
 City titles, regional subtitles, projected place labels and a route locator provide orientation. Exploration pauses presentation time while ambient activity continues; explicit pause freezes activity. Continue journey restores guided playback. Seeking reconstructs the selected scene, and only the active and next scene are retained.
 
 The miniatures are original procedural geometry, informed by public destination references. They illustrate places and activity, not surveyed geometry, hydraulic behaviour or contemporary conditions. The feeder channel and local estuary are schematic and do not change the HydroRIVERS topology.
 
-See **ganga-living-journey-guide.md** for controls, scene inventory, references and later work. The current full presentation is approximately seven minutes; pacing remains adjustable.
+See **ganga-living-journey-guide.md** for controls, scene inventory, references and later work. The map stays central throughout the guided tour. Constant-width gold and blue strokes distinguish followed and onward routes; mint highlights tributary approaches. The Ganga map presentation is approximately 1 minute 52 seconds at 1×; reading and optional visits extend it.
 
 ## Next phase: Blender
 
@@ -66,4 +66,4 @@ All 19 journeys were checked for downstream-only timeline progress, correct sour
 
 ## Guided reading and adjustable pace
 
-Implemented five playback speeds from 0.5× to 3×, plus 32 Ganga destination notes and 14 travel notes. Reading mode holds the guided timeline and camera while ambient activity continues. Notes support previous/next navigation, source links and return to automatic playback.
+Implemented five playback speeds from 0.5× to 3×, plus 16 Ganga map notes and 14 travel notes. The 32-note destination library is retained alongside miniature descriptions. Reading mode holds the guided timeline and camera while ambient activity continues. Notes support previous/next navigation, source links and return to automatic playback.

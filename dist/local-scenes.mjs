@@ -18,11 +18,11 @@ export class LocalScenes{
  fade(){const node=$('scene-transition');node.classList.remove('crossing');void node.offsetWidth;node.classList.add('crossing');}
  sync(state,s,dt){this.state=state;this.sample=s;const id=state.mode==='river'&&state.river?.id==='ganga'?s?.chapter.scene:null;const key=id?`${id}-${s.chapter.index}`:null;
   if(key!==this.sceneKey){this.sceneKey=key;this.forcedAtlas=false;this.selected=null;this.viewpoint='guided';this.lastElapsed=null;}
-  const eligible=id&&!s.travelling&&!this.view.flight&&!this.forcedAtlas&&!(id==='estuary'&&s.phase>.88);
-  if(!eligible){this.deactivate();if(id&&s.travelling&&!this.failed.has(id))this.get(id);return;}
+  const eligible=id&&state.localVisit&&!s.travelling&&!this.view.flight&&!this.forcedAtlas;
+  if(!eligible){this.deactivate();return;}
   const model=this.get(id);$('local-error').hidden=!!model;if(!model){this.deactivate();return;}
-  const changed=this.active!==model;if(changed){this.active=model;this.selected=null;this.viewpoint='guided';this.controls.enabled=true;this.view.controls.enabled=false;document.body.classList.add('local-scene');$('local-overlay').hidden=false;$('local-labels').hidden=false;this.populate(model.definition);this.fade();this.clock=s.seconds-s.chapter.arrival;this.snapCamera(cameraAt(model.definition,s.phase,this.reduced));this.prune(id);}
-  this.phase=s.phase;this.free=state.free;const elapsed=s.seconds-s.chapter.arrival;
+  const changed=this.active!==model;if(changed){this.active=model;this.selected=null;this.viewpoint='guided';this.controls.enabled=true;this.view.controls.enabled=false;document.body.classList.add('local-scene');$('local-overlay').hidden=false;$('local-labels').hidden=false;this.populate(model.definition);this.fade();this.clock=s.seconds-s.chapter.arrival;this.snapCamera(cameraAt(model.definition,.44,this.reduced));this.prune(id);}
+  this.phase=.44;this.free=state.free;const elapsed=s.seconds-s.chapter.arrival;
   if(this.lastElapsed!==null&&Math.abs(elapsed-this.lastElapsed)>.5)this.clock=elapsed;
   else if((state.free||state.reading)&&!state.activityPaused&&!this.reduced&&!document.hidden)this.clock+=dt*(state.reading?1:state.speed);
   else if(!state.free)this.clock+=this.lastElapsed===null?0:Math.max(0,elapsed-this.lastElapsed);
@@ -50,6 +50,7 @@ export class LocalScenes{
  resume(){this.forcedAtlas=false;this.selected=null;this.viewpoint='guided';if(this.active){const d=this.active.definition;$('local-detail-title').textContent=d.caption;$('local-description').textContent=d.text;this.updateSelection();}}
  snapCamera(shot){this.camera.position.set(...shot.position);this.controls.target.set(...shot.target);this.camera.lookAt(this.controls.target);}
  detourPose(){const def=this.active.definition,p=def.points.find(x=>x.id===this.selected),anchor=p?this.active.anchor(def.points.indexOf(p)).toArray():[0,2,0],v=this.viewpoint;
+  if(v==='guided')return cameraAt(def,.44,this.reduced);
   if(v==='above')return{position:[20,57,34],target:[-5,1,0]};
   if(v==='boat'||v==='vehicle'){if(this.clock-this.detourStart>16)return cameraAt(def,.45,this.reduced);const a=anchor;return{position:[a[0]+(v==='boat'?7:9),a[1]+(v==='boat'?4:5),a[2]+10],target:a};}
   if(v==='left')return{position:[-32,25,18],target:[-12,1,-13]};if(v==='right')return{position:[32,25,20],target:[12,1,-8]};

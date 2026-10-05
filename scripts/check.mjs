@@ -20,4 +20,5 @@ for(const name of fs.readdirSync('dist').filter(n=>n.endsWith('.mjs'))){
 run(['scripts/check-journeys.mjs']);
 run(['scripts/check-guide.mjs']);
 run(['--no-warnings','--experimental-loader','./scripts/three-loader.mjs','scripts/check-local-scenes.mjs']);
-console.log('Passed: module syntax and imports, 19 river routes, 16 scene configurations, and 46 guide notes.');
+run(['--no-warnings','--experimental-loader','./scripts/three-loader.mjs','scripts/check-river-rendering.mjs']);
+console.log('Passed: module syntax and imports, 19 river routes, 16 scene configurations, 62 guide notes, screen-width strokes and backward seeking.');

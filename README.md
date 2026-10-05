@@ -7,6 +7,8 @@
 Explore India's rivers in 3D, then descend into a living Ganga journey—
 from glacier valleys to ghats, bridges and the lower estuary.
 
+**[Launch River Atlas ↗](https://india-river-atlas.tecknight.workers.dev/)**
+
 **19 river journeys · 8 Ganga miniatures · 46 guide notes**
 
 [Explore the experience](#explore-the-experience) · [Run locally](#run-locally) · [Road to ready](#road-to-ready) · [Development guide](#development-guide)
